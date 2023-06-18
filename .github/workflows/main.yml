@@ -25,6 +25,7 @@ jobs:
       - name: Installing dependencies
         run: npm ci
   build:
+    needs: install-dependencies
     runs-on: windows-latest
     steps:
      - name: Build Source code
