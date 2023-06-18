@@ -28,7 +28,10 @@ jobs:
           node-version: '16.x'
 
       - name: Installing dependencies
-        run: npm ci
+        run: |
+          npm ci
+          dir
+        
   build:
     needs: install-dependencies
     runs-on: windows-latest
