@@ -1,9 +1,16 @@
 name: Build NodeJS application
 'on': workflow_dispatch
+env: 
+  USER_NAME: 'PANKAJ KUMAR'
+  USER_PWD: 'PASSWORD'
 jobs:
   install-dependencies:
     runs-on: windows-latest
     steps:
+      - name: Display envionment variable
+        run: |
+          echo $USER_NAME ${{ USER_NAME }}
+          echo $USER_PWD ${{ USER_PWD }}
       - name: Download source code
         uses: actions/checkout@v3
         with:
