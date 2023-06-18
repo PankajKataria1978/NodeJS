@@ -23,4 +23,9 @@ jobs:
             ${{ runner.os }}-node-
         
       - name: Installing dependencies
-        run: npm install
+        run: npm ci
+  build:
+    runs-on: windows-latest
+    steps:
+     - name: Build Source code
+       run: npm build
