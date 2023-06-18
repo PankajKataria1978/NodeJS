@@ -1,0 +1,9 @@
+name: Build NodeJS application
+on: workflow_dispatch
+jobs:
+  install-dependencies:
+   runs-on: windows-latest
+   steps:
+   - name: Installing dependencies
+     run: npm install 
+  
