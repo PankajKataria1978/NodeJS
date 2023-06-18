@@ -13,6 +13,7 @@ jobs:
           echo $env:USER_PWD
           # displaying using env context
           echo ${{ env.USER_NAME }}
+          echo ${{ env.GITHUB_REPOSITORY }}
       - name: Download source code
         uses: actions/checkout@v3
         with:
