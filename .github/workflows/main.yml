@@ -5,7 +5,10 @@ env:
   USER_PWD: 'PASSWORD'
 jobs:
   install-dependencies:
+    environment: 'QA'
     runs-on: windows-latest
+    env:
+      REPONAME: ${{ secrets.QA_SECRET}}
     steps:
       - name: Display envionment variable
         run: |
@@ -14,6 +17,7 @@ jobs:
           # displaying using env context
           echo ${{ env.USER_NAME }}
           echo $env:GITHUB_REPOSITORY
+          echo $env:REPONAME
       - name: Download source code
         uses: actions/checkout@v3
         with:
