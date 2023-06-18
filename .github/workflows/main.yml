@@ -7,7 +7,7 @@ jobs:
       - name: Download source code
         uses: actions/checkout@v3
         with:
-          depth: 1
+          fetch-depth: 1
           
       - name: Get npm cache directory
         id: npm-cache-dir
@@ -31,10 +31,8 @@ jobs:
         run: |
           npm ci
           dir
-        
-  build:
-    needs: install-dependencies
-    runs-on: windows-latest
-    steps:
-     - name: Build Source code
-       run: npm run build
+          
+      - name: Build Source code
+        run: npm run build
+
+
