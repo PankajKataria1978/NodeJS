@@ -31,14 +31,14 @@ jobs:
         run: |
           npm ci
           dir
-          
+           
       - name: Build Source code
         run: npm run build
         
       - uses: actions/upload-artifact@v2
         with:
          name: dist_files
-         path: /dist
+         path: dist
 
 
 
